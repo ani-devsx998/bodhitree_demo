@@ -67,6 +67,8 @@ TEMPLATES = [
     },
 ]
 
+STATIC_URL = 'static/'
+
 WSGI_APPLICATION = 'Bodhitree_Demo.wsgi.application'
 
 

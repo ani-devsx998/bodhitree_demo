@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BodhiTree</title>
+    <link rel="icon" type="image/png" href="bodhitree icon.png">
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <img id="BodhiTreeIcon"
+                 src="{% static 'bodhitree icon.png' %}"
+                 alt="BodhiTreeIcon">
+
+            <div class="navlinks">
+
+                <p id="Student">STUDENT</p>
+
+                <a id="MyCourses" href="#">My Courses</a>
+                <a id="Explore" href="#">Explore</a>
+
+                <div class="dropdown">
+
+                    <button class="dropbutton">
+                        user@example.com
+                    </button>
+
+                    <div class="drop-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Logout</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <h2 id="CourseName">
+            Problem Solving Through C++
+        </h2>
+
+        <div class="Header">
+
+            <a href="#">Multimedia Book</a>
+            <a href="#">Labs</a>
+            <a href="#">Schedule</a>
+            <a href="#">Announcements</a>
+            <a href="#">Interaction</a>
+            <a href="#">Performance</a>
+            <a href="#">About Course</a>
+            <a href="#">Extra Pages</a>
+
+        </div>
+
+        <div class="Performance">
+
+            <div class="tabs">
+                <h3>Overview</h3>
+                <h3>In-Depth Analysis</h3>
+                <h3>Notes</h3>
+            </div>
+
+            <div class="content">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Marks</th>
+                            <th>Highest Marks</th>
+                            <th>Time Taken</th>
+                            <th>Leaderboard Rank</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+<script>
+
+fetch('/students/')
+.then(response => response.json())
+
+.then(data => {
+
+    let tableBody =
+        document.getElementById('studentTableBody');
+
+    data.forEach(student => {
+
+        let row = `
+            <tr>
+                <td>${student.name}</td>
+                <td>${student.marks}</td>
+                <td>${student.highest_marks}</td>
+                <td>${student.time_taken}</td>
+                <td>${student.rank}</td>
+            </tr>
+        `;
+
+        tableBody.innerHTML += row;
+    });
+
+})
+
+.catch(error => {
+    console.log("Error:", error);
+});
+
+</script>
+
+</body>
+</html>
