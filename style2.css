@@ -1,0 +1,161 @@
+/*Header*/
+header{
+    z-index: 1000;
+    border-bottom: 1px solid;
+    width: 100%;
+    height: 60px;
+}
+/*aligns the header content*/
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navlinks{
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    align-items: center;
+}
+
+
+#BodhiTreeIcon{
+    padding-top: none;
+    margin-top: 0px;
+    margin-left: 50px;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+#Student{
+    text-decoration: none;
+    background-color: rgb(217, 243, 178);
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 5px;
+    text-align: right;
+}
+
+#MyCourses{
+    font-size: 18px;
+    text-decoration: none;
+    color: hsl(0, 4%, 22%);
+    text-align: right;
+}
+
+#Explore{
+    font-size: 18px;
+    text-decoration: none;
+    color: hsl(0, 0%, 19%);
+    text-align: right;
+}
+
+#MyCourses:hover,
+#Explore:hover{
+    color:red;
+}
+
+/*dropdown meanue*/
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+}
+.dropbutton{
+    border: 1px solid;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.drop-content{
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 99%);
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid;
+    border-radius: 2px;
+    align-items: center;
+}
+
+.dropdown:hover .drop-content{
+    display: block;
+}
+.drop-content a{
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid;
+    text-decoration: none;
+
+}
+.drop-content a:hover{
+    background-color: grey;
+}
+
+
+main{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "name name"
+    "tabs analysis"
+    "footer footer";
+    gap: 5px;
+    padding: 5px;
+}
+#CourseName{
+    grid-area: name;
+    margin-left: 50px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.Header{
+    grid-area: header;
+    margin-right: 40px;
+    margin-left: 40px;
+    border: 1px solid;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Header a{
+    text-decoration: none;
+    color: gray;
+    margin: 7px;
+}
+.Performance{
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 1px solid;
+    height: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+}
+.tabs{
+    padding-top: 0;
+    margin-left: 5px;
+}
+
+.tabs h3{
+    border: 1px solid;
+    overflow: auto;
+    padding: 10px;
+    margin: 0; 
+    margin-bottom: -1px; 
+    text-align: center;
+}
+
+.content{
+    margin-left: 100px;
+    display: grid;
+    grid-template-areas: 
+    "Marks HighestMarks"
+    "TimeTaken LeaderboardRank";
+    
+}
